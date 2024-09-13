@@ -1,0 +1,104 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel img.active {
+            opacity: 1;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <div class="bg-red-500 text-white p-4 flex items-center">
+   <img alt="Hospital logo" class="h-12 w-12 rounded-full mr-4" height="50" src="C:\Users\2022PECIT202\Downloads\logo.png" width="50"/>
+   <h1 class="text-2xl font-bold">
+    ABC Multispeciality Hospital
+   </h1>
+  </div>
+  <div class="flex h-screen">
+   <div class="w-1/2 relative carousel">
+    <img alt="Doctor with patient 1" class="active" height="400" src="C:\Users\2022PECIT202\Downloads\Designer.png"/>
+    <img alt="Doctor with patient 2" class="active" height="400" src="C:\Users\2022PECIT202\Downloads\ward.jpg" width="600"/>
+    <img alt="Doctor with patient 3" height="400" src="C:\Users\2022PECIT202\Downloads\happy.png" width="600"/>
+    <div class="absolute inset-y-1/2 left-4 text-black text-2xl cursor-pointer" onclick="prevImage()">
+     <i class="fas fa-chevron-left">
+     </i>
+    </div>
+    <div class="absolute inset-y-1/2 right-4 text-black text-2xl cursor-pointer" onclick="nextImage()">
+     <i class="fas fa-chevron-right">
+     </i>
+    </div>
+   </div>
+   <div class="w-1/2 flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full h-full flex flex-col justify-center">
+     <h2 class="text-4xl font-bold mb-4 text-center">
+      MEDICAL RECORDS MANAGEMENT
+     </h2>
+     <p class="text-purple-600 mb-2 text-center">
+      YOU'RE NOW LOGGING IN AS PATIENT. TO SWITCH TO HEALTHCARE PROVIDER ACCOUNT, CLICK ON SWITCH
+     </p>
+     <h3 class="text-2xl font-bold text-red-500 mb-4 text-center">
+      LOGIN
+     </h3>
+     <input class="w-full p-3 mb-4 border rounded-lg" placeholder="ENTER MOBILE NUMBER OR EMAIL" type="text"/>
+     <input class="w-full p-3 mb-4 border rounded-lg" placeholder="ENTER YOUR PASSWORD" type="password"/>
+     <p class="text-blue-500 text-center mb-4">
+      FORGOT PASSWORD?
+     </p>
+     <div class="flex justify-center space-x-4">
+      <button class="bg-red-500 text-white px-6 py-2 rounded-lg">
+       ENTER
+      </button>
+      <button class="bg-red-500 text-white px-6 py-2 rounded-lg">
+       SWITCH
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const totalImages = images.length;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % totalImages;
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+            showImage(currentImageIndex);
+        }
+
+        setInterval(nextImage, 1000);
+  </script>
+ </body>
+</html>

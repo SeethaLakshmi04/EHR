@@ -1,0 +1,128 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Reports
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Arial', sans-serif;
+        }
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            text-decoration: underline;
+        }
+  </style>
+ </head>
+ <body class="flex h-screen">
+  <!-- Sidebar -->
+  <div id="sidebar" class="bg-red-500 text-white w-1/4 p-6">
+   <div class="flex justify-end">
+    <i id="menu-toggle" class="fas fa-times text-2xl cursor-pointer">
+    </i>
+   </div>
+   <nav class="mt-10">
+    <ul>
+     <li class="menu-item flex items-center mb-6 cursor-pointer">
+      <i class="fas fa-home mr-3">
+      </i>
+      <span>
+       Home
+      </span>
+     </li>
+     <li class="menu-item flex items-center mb-6 cursor-pointer">
+      <i class="fas fa-bell mr-3">
+      </i>
+      <span>
+       Notifications
+      </span>
+     </li>
+     <li class="menu-item flex items-center mb-6 cursor-pointer">
+      <i class="fas fa-folder mr-3">
+      </i>
+      <span class="underline">
+       Reports
+      </span>
+     </li>
+     <li class="menu-item flex items-center mb-6 cursor-pointer">
+      <i class="fas fa-briefcase-medical mr-3">
+      </i>
+      <span>
+       Prescriptions
+      </span>
+     </li>
+     <li class="menu-item flex items-center cursor-pointer">
+      <i class="fas fa-comment mr-3">
+      </i>
+      <span>
+       Contact
+      </span>
+     </li>
+    </ul>
+   </nav>
+  </div>
+  <!-- Main Content -->
+  <div class="flex-1 p-6 relative">
+   <div class="flex justify-end items-center mb-6 relative">
+    <span class="mr-2 cursor-pointer" id="user-menu">
+     Dr.Ashwin
+    </span>
+    <i class="fas fa-user-circle text-2xl cursor-pointer" id="user-icon">
+    </i>
+    <div id="sign-out" class="absolute top-10 right-0 bg-white text-black p-2 shadow-md hidden cursor-pointer">
+     Sign Out
+    </div>
+   </div>
+   <div class="flex justify-center space-x-10 mb-10">
+    <div class="text-center">
+     <img alt="Medical report image" class="border-dashed border-2 border-gray-400" height="150" src="C:\Users\2022PECIT202\Downloads\doctor report.jpg" width="120"/>
+     <p class="mt-2">
+      P.NO : 202
+     </p>
+    </div>
+    <div class="text-center">
+     <img alt="Medical report image" class="border-dashed border-2 border-gray-400" height="150" src="C:\Users\2022PECIT202\Downloads\doctor report.jpg" width="120"/>
+     <p class="mt-2">
+      P.NO : 715
+     </p>
+    </div>
+   </div>
+   <div class="absolute bottom-10 w-full flex justify-center">
+    <div class="text-center">
+     <i class="fas fa-folder-plus text-4xl">
+     </i>
+     <p class="mt-2">
+      CLICK TO FETCH REPORTS FROM LAB
+     </p>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById('user-icon').addEventListener('click', function() {
+            var signOut = document.getElementById('sign-out');
+            if (signOut.classList.contains('hidden')) {
+                signOut.classList.remove('hidden');
+            } else {
+                signOut.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('hidden')) {
+                sidebar.classList.remove('hidden');
+                this.classList.remove('fa-bars');
+                this.classList.add('fa-times');
+            } else {
+                sidebar.classList.add('hidden');
+                this.classList.remove('fa-times');
+                this.classList.add('fa-bars');
+            }
+        });
+  </script>
+ </body>
+</html>

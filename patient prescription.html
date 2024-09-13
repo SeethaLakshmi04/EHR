@@ -1,0 +1,111 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .menu-item:hover {
+    text-decoration: underline;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex h-screen">
+   <!-- Sidebar -->
+   <div id="sidebar" class="bg-red-600 text-white w-1/4 p-4">
+    <div class="flex justify-end">
+     <i class="fas fa-times text-2xl cursor-pointer" onclick="toggleMenu()">
+     </i>
+    </div>
+    <nav class="mt-8">
+     <ul>
+      <li class="flex items-center mb-6 menu-item">
+       <i class="fas fa-home mr-2">
+       </i>
+       <span>
+        Home
+       </span>
+      </li>
+      <li class="flex items-center mb-6 menu-item">
+       <i class="fas fa-bell mr-2">
+       </i>
+       <span>
+        Notifications
+       </span>
+      </li>
+      <li class="flex items-center mb-6 menu-item">
+       <i class="fas fa-prescription-bottle-alt mr-2">
+       </i>
+       <span>
+        Prescription
+       </span>
+      </li>
+      <li class="flex items-center mb-6 menu-item">
+       <i class="fas fa-folder mr-2">
+       </i>
+       <span>
+        Reports
+       </span>
+      </li>
+      <li class="flex items-center menu-item">
+       <i class="fas fa-comment-alt mr-2">
+       </i>
+       <span>
+        Contact
+       </span>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-4 relative">
+    <div class="flex justify-end items-center mb-4 relative">
+     <span class="mr-2">
+      Ms.Vaishali
+     </span>
+     <i class="fas fa-user-circle text-2xl cursor-pointer" onclick="toggleSignOut()">
+     </i>
+     <div id="signout" class="hidden absolute top-10 right-0 bg-white border border-gray-300 p-2">
+      <button class="text-red-600">
+       Sign Out
+      </button>
+     </div>
+    </div>
+    <div class="absolute top-16 left-4">
+     <div class="border border-gray-300 p-4">
+      <img alt="Prescription image with text: Name: John Smith, Address: 400 E 3rd Street, Duluth, MN 55804, Amoxicillin 250 mg tablets, 1 tablet p.o. T.i.d. x 7 days, Refill: 0 Times, Date: 1/3/00, (Sign), D.E.A. Number, Print Last Name" class="mb-4" height="200" src="C:\Users\2022PECIT202\Downloads\prescription.jpg" width="200"/>
+      <div class="text-center text-gray-600">
+       10:16 AM 13-08-2024
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="hamburger" class="hidden fixed top-4 left-4 cursor-pointer">
+   <i class="fas fa-bars text-2xl">
+   </i>
+  </div>
+  <script>
+   function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('hidden')) {
+     sidebar.classList.remove('hidden');
+     hamburger.classList.add('hidden');
+    } else {
+     sidebar.classList.add('hidden');
+     hamburger.classList.remove('hidden');
+    }
+   }
+   function toggleSignOut() {
+    const signout = document.getElementById('signout');
+    if (signout.classList.contains('hidden')) {
+     signout.classList.remove('hidden');
+    } else {
+     signout.classList.add('hidden');
+    }
+   }
+   document.getElementById('hamburger').addEventListener('click', toggleMenu);
+  </script>
+ </body>
+</html>

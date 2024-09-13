@@ -1,0 +1,98 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .notifications:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-red-500 text-white w-1/4 h-screen p-6">
+        <div class="flex justify-end">
+            <i id="close-menu" class="fas fa-times text-2xl cursor-pointer"></i>
+        </div>
+        <nav class="mt-10">
+            <ul>
+                <li class="menu-item flex items-center mb-6 p-2 rounded cursor-pointer">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Home</span>
+                </li>
+                <li class="menu-item flex items-center mb-6 p-2 rounded cursor-pointer notifications">
+                    <i class="fas fa-bell mr-3"></i>
+                    <span>Notifications</span>
+                </li>
+                <li class="menu-item flex items-center mb-6 p-2 rounded cursor-pointer">
+                    <i class="fas fa-folder mr-3"></i>
+                    <span>Reports</span>
+                </li>
+                <li class="menu-item flex items-center mb-6 p-2 rounded cursor-pointer">
+                    <i class="fas fa-prescription-bottle-alt mr-3"></i>
+                    <span>Prescriptions</span>
+                </li>
+                <li class="menu-item flex items-center p-2 rounded cursor-pointer">
+                    <i class="fas fa-comment-alt mr-3"></i>
+                    <span>Contact</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div id="hamburger-menu" class="hidden p-6">
+        <i id="open-menu" class="fas fa-bars text-2xl cursor-pointer"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6 relative">
+        <div class="flex justify-end items-center mb-6 relative">
+            <span class="mr-3">Dr.Ashwin</span>
+            <i id="profile-icon" class="fas fa-user-circle text-2xl cursor-pointer"></i>
+            <div id="signout-menu" class="hidden absolute top-10 right-0 bg-white shadow-lg rounded p-2">
+                <button class="text-red-500">Sign Out</button>
+            </div>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p>LAB TECHNICIAN GURU, PATIENT NO:218, SAMUEL’S LAB TEST REPORT IS READY.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p>LAB TECHNICIAN GURU, PATIENT NO: 78 , LOGESHWARI’S LAB TEST REPORT IS READY.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p>PHARMACIST MUTHUKUMAR AND 67+ OTHERS TRIED TO CONTACT YOU</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('close-menu').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.add('hidden');
+            document.getElementById('hamburger-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('open-menu').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('hidden');
+            document.getElementById('hamburger-menu').classList.add('hidden');
+        });
+
+        document.getElementById('profile-icon').addEventListener('click', function() {
+            var signoutMenu = document.getElementById('signout-menu');
+            if (signoutMenu.classList.contains('hidden')) {
+                signoutMenu.classList.remove('hidden');
+            } else {
+                signoutMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

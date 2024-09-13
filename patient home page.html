@@ -1,0 +1,131 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+   }
+  </style>
+ </head>
+ <body class="bg-white font-sans">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div id="sidebar" class="bg-red-500 text-white w-1/4 h-screen p-6">
+    <div class="flex justify-end">
+     <i id="close-menu" class="fas fa-times text-2xl cursor-pointer">
+     </i>
+    </div>
+    <nav class="mt-8">
+     <ul>
+      <li class="mb-4 flex items-center menu-item cursor-pointer">
+       <i class="fas fa-home mr-2">
+       </i>
+       <a class="text-lg font-bold" href="#">
+        Home
+       </a>
+      </li>
+      <li class="mb-4 flex items-center menu-item cursor-pointer">
+       <i class="fas fa-bell mr-2">
+       </i>
+       <a class="text-lg" href="#">
+        Notifications
+       </a>
+      </li>
+      <li class="mb-4 flex items-center menu-item cursor-pointer">
+       <i class="fas fa-clipboard mr-2">
+       </i>
+       <a class="text-lg" href="#">
+        Prescription
+       </a>
+      </li>
+      <li class="mb-4 flex items-center menu-item cursor-pointer">
+       <i class="fas fa-folder mr-2">
+       </i>
+       <a class="text-lg" href="#">
+        Reports
+       </a>
+      </li>
+      <li class="mb-4 flex items-center menu-item cursor-pointer">
+       <i class="fas fa-comment mr-2">
+       </i>
+       <a class="text-lg" href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Hamburger Menu -->
+   <div id="hamburger-menu" class="hidden bg-red-500 text-white p-6">
+    <i id="open-menu" class="fas fa-bars text-2xl cursor-pointer">
+    </i>
+   </div>
+   <!-- Main Content -->
+   <div class="w-3/4 p-6">
+    <div class="flex justify-between items-center">
+     <div>
+     </div>
+     <div class="relative flex items-center">
+      <span class="mr-2">
+       Ms.Vaishali
+      </span>
+      <i id="user-icon" class="fas fa-user-circle text-2xl cursor-pointer">
+      </i>
+      <div id="sign-out" class="hidden absolute right-0 mt-8 bg-white text-black p-2 rounded shadow-lg">
+       <a class="block" href="#">
+        Sign Out
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="mt-6">
+     <div class="bg-blue-900 text-white p-6 rounded-lg">
+      <p class="text-xl">
+       Nothing is impossible, the word itself says “I’m possible!”
+      </p>
+      <p class="text-right mt-4">
+       — Audrey Hepburn
+      </p>
+     </div>
+    </div>
+    <div class="mt-6">
+     <h2 class="text-xl font-bold">
+      ARTICLES THAT MIGHT INTEREST YOU:
+     </h2>
+     <div class="flex items-center mt-4">
+      <i class="fas fa-chevron-left text-2xl cursor-pointer">
+      </i>
+      <div class="flex mx-4">
+       <div class="w-1/2 p-2">
+        <img alt="Illustration of healthy lifestyle tips including self-care, sports, vegetables, and drinking water" class="rounded-lg" height="200" src="C:\Users\2022PECIT202\Downloads\dietplan.jpg" width="300"/>
+       </div>
+       <div class="w-1/2 p-2">
+        <img alt="Image of a diet plan notebook surrounded by healthy foods and measuring tape" class="rounded-lg" height="200" src="C:\Users\2022PECIT202\Downloads\hlife.jpg" width="300"/>
+       </div>
+      </div>
+      <i class="fas fa-chevron-right text-2xl cursor-pointer">
+      </i>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById('close-menu').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.add('hidden');
+    document.getElementById('hamburger-menu').classList.remove('hidden');
+   });
+
+   document.getElementById('open-menu').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.remove('hidden');
+    document.getElementById('hamburger-menu').classList.add('hidden');
+   });
+
+   document.getElementById('user-icon').addEventListener('click', function() {
+    document.getElementById('sign-out').classList.toggle('hidden');
+   });
+  </script>
+ </body>
+</html>

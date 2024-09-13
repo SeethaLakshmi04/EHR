@@ -1,0 +1,116 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-100 font-sans">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div id="sidebar" class="bg-red-500 text-white w-1/5 h-screen p-4 transition-transform transform">
+    <div class="flex justify-end">
+     <i id="close-menu" class="fas fa-times text-2xl cursor-pointer">
+     </i>
+    </div>
+    <nav class="mt-8">
+     <ul>
+      <li class="flex items-center mb-6 menu-item cursor-pointer">
+       <i class="fas fa-home mr-2">
+       </i>
+       <span>
+        Home
+       </span>
+      </li>
+      <li class="flex items-center mb-6 menu-item cursor-pointer">
+       <i class="fas fa-bell mr-2">
+       </i>
+       <span>
+        Notifications
+       </span>
+      </li>
+      <li class="flex items-center mb-6 menu-item cursor-pointer">
+       <i class="fas fa-prescription-bottle-alt mr-2">
+       </i>
+       <span>
+        Prescription
+       </span>
+      </li>
+      <li class="flex items-center mb-6 menu-item cursor-pointer">
+       <i class="fas fa-folder mr-2">
+       </i>
+       <span>
+        Reports
+       </span>
+      </li>
+      <li class="flex items-center menu-item cursor-pointer">
+       <i class="fas fa-comment-alt mr-2">
+       </i>
+       <span>
+        Contact
+       </span>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Hamburger Menu -->
+   <div id="hamburger-menu" class="hidden p-4">
+    <i class="fas fa-bars text-2xl cursor-pointer">
+    </i>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-8">
+    <div class="flex justify-end items-center mb-8 relative">
+     <span class="mr-2 cursor-pointer" id="user-menu">
+      Ms.Vaishali
+     </span>
+     <i class="fas fa-user-circle text-2xl cursor-pointer" id="user-icon">
+     </i>
+     <div id="sign-out" class="absolute right-0 mt-8 bg-white border rounded shadow-lg p-2 hidden">
+      <span class="cursor-pointer">
+       Sign Out
+      </span>
+     </div>
+    </div>
+    <div class="flex justify-center space-x-8">
+     <div class="text-center">
+      <img alt="Medical report with various details and diagrams" class="border-dashed border-2 border-gray-400" height="300" src="C:\Users\2022PECIT202\Downloads\doctor report.jpg" width="200"/>
+      <p class="mt-2 text-sm">
+       9:53 AM 10-08-2024
+      </p>
+     </div>
+     <div class="text-center">
+      <img alt="Graphical medical report with data table" class="border-dashed border-2 border-gray-400" height="300" src="C:\Users\2022PECIT202\Downloads\heart report.png" width="200"/>
+      <p class="mt-2 text-sm">
+       10:05 PM 11-08-2024
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById('close-menu').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.add('hidden');
+    document.getElementById('hamburger-menu').classList.remove('hidden');
+   });
+
+   document.getElementById('hamburger-menu').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.remove('hidden');
+    document.getElementById('hamburger-menu').classList.add('hidden');
+   });
+
+   document.getElementById('user-icon').addEventListener('click', function() {
+    document.getElementById('sign-out').classList.toggle('hidden');
+   });
+
+   document.getElementById('user-menu').addEventListener('click', function() {
+    document.getElementById('sign-out').classList.toggle('hidden');
+   });
+  </script>
+ </body>
+</html>
